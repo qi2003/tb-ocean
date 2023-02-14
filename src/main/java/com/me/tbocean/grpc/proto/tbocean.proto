@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.me.tbocean.grpc.proto";
+package com.me.tbocean;
+
+service ManagementService {
+
+   rpc CategoryUser (CategoryUserRequest) returns (CategoryUserReply);
+
+   rpc CommentUser (CommentUserRequest) returns (CommentUserReply);
+
+   rpc DetailsUser (DetailsUserRequest) returns (DetailsUserReply);
+
+   rpc User (UserRequest) returns (UserReply);
+}
+
+message CategoryUserRequest {
+   int32 t_id = 1;
+   string type = 2;
+}
+
+message CategoryUserReply {
+
+}
+
+message CommentUserRequest {
+   int32 c_id = 1;
+   int32 cd_id = 2;
+   string c_content = 3;
+   string c_author = 4;
+   int64 c_createDate = 5;
+}
+
+message CommentUserReply {
+
+}
+
+message DetailsUserRequest {
+   int32 d_id = 1;
+   int32 t_id = 2;
+   string d_title = 3;
+   string d_content = 4;
+   string d_author = 5;
+   int64 d_releaseDate = 6;
+}
+
+message DetailsUserReply {
+
+}
+
+message UserRequest {
+   int32 u_id = 1;
+   string u_name = 2;
+   string paword = 3;
+   string email = 4;
+   int32 u_type = 5;
+}
+
+message UserReply {
+
+}
