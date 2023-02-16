@@ -6,57 +6,54 @@ package com.me.tbocean;
 
 service ManagementService {
 
-   rpc CategoryUser (CategoryUserRequest) returns (CategoryUserReply);
+   rpc AddTbocean (AddTboceanRequest) returns (AddTboceanReply);
 
-   rpc CommentUser (CommentUserRequest) returns (CommentUserReply);
+   rpc UpdateTbocean (UpdateTboceanRequest) returns (UpdateTboceanReply);
 
-   rpc DetailsUser (DetailsUserRequest) returns (DetailsUserReply);
+   rpc DeleteTbocean (DeleteTboceanRequest) returns (DeleteTboceanReply);
 
-   rpc User (UserRequest) returns (UserReply);
+   rpc ListTboceanId (ListTboceanIdRequest) returns (ListTboceanIdReply);
 }
 
-message CategoryUserRequest {
-   int32 t_id = 1;
-   string type = 2;
-}
-
-message CategoryUserReply {
-
-}
-
-message CommentUserRequest {
-   int32 c_id = 1;
-   int32 cd_id = 2;
-   string c_content = 3;
-   string c_author = 4;
-   int64 c_createDate = 5;
-}
-
-message CommentUserReply {
-
-}
-
-message DetailsUserRequest {
+message AddTboceanRequest {
    int32 d_id = 1;
-   int32 t_id = 2;
-   string d_title = 3;
-   string d_content = 4;
-   string d_author = 5;
-   int64 d_releaseDate = 6;
+   int32 u_id = 2;
 }
 
-message DetailsUserReply {
+message AddTboceanReply {
+   bool result = 1;  //操作是否成功
+   string message = 2;  //消息
+}
+
+message UpdateTboceanRequest {
+   int32 d_id = 1;
+   int32 c_id = 2;
+}
+
+message UpdateTboceanReply {
+   bool result = 1;  //操作是否成功
+   string message = 2;  //消息
+}
+
+message DeleteTboceanRequest {
+   int32 d_id = 1;
+   int32 c_id = 2;
 
 }
 
-message UserRequest {
+message DeleteTboceanReply {
+   bool result = 1;  //操作是否成功
+   string message = 2;  //消息
+}
+
+message ListTboceanIdRequest {
+   int32 u_id = 1;
+}
+
+message ListTboceanIdReply {
    int32 u_id = 1;
    string u_name = 2;
    string paword = 3;
    string email = 4;
    int32 u_type = 5;
-}
-
-message UserReply {
-
 }
