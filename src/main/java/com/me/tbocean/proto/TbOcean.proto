@@ -1,10 +1,11 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "com.me.tbocean.grpc.proto";
-package com.me.tbocean;
+option java_package = "io.bbex.broker.grpc.admin";
+option java_outer_classname = "TbOceanProto";
+package com.me.tbocean.packet;
 
-service ManagementService {
+service TbOceanService {
 
    rpc AddTbocean (AddTboceanRequest) returns (AddTboceanReply);
 
