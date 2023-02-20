@@ -3,7 +3,7 @@ syntax = "proto3";
 option java_multiple_files = true;
 option java_package = "io.bbex.broker.grpc.admin";
 option java_outer_classname = "TbOceanProto";
-package com.me.tbocean.packet;
+
 
 service TbOceanService {
 
