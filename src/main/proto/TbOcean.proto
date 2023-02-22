@@ -24,6 +24,11 @@ service TbOceanService {
 
 message AddTboceanRequest {
    int32 d_id = 1;
+   int32 t_id = 2;
+   string d_title = 3;
+   string d_content = 4;
+   string d_author = 5;
+   int64 d_releaseDate = 6;
 }
 
 message AddTboceanReply {
@@ -33,6 +38,11 @@ message AddTboceanReply {
 
 message UpdateTboceanRequest {
    int32 d_id = 1;
+   int32 t_id = 2;
+   string d_title = 3;
+   string d_content = 4;
+   string d_author = 5;
+   int64 d_releaseDate = 6;
 }
 
 message UpdateTboceanReply {
@@ -42,7 +52,6 @@ message UpdateTboceanReply {
 
 message DeleteTboceanRequest {
    int32 d_id = 1;
-
 }
 
 message DeleteTboceanReply {
@@ -64,7 +73,11 @@ message ListTboceanIdReply {
 
 
 message AddTboceanaRequest {
-   int32 u_id = 1;
+   int32 c_id = 1;
+   int32 cd_id = 2;
+   string c_content = 3;
+   string c_author = 4;
+   int64 c_createDate = 5;
 }
 
 message AddTboceanaReply {
@@ -74,6 +87,10 @@ message AddTboceanaReply {
 
 message UpdateTboceanaRequest {
    int32 c_id = 1;
+   int32 cd_id = 2;
+   string c_content = 3;
+   string c_author = 4;
+   int64 c_createDate = 5;
 }
 
 message UpdateTboceanaReply {
@@ -83,7 +100,6 @@ message UpdateTboceanaReply {
 
 message DeleteTboceanaRequest {
    int32 c_id = 1;
-
 }
 
 message DeleteTboceanaReply {
